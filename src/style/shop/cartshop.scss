@@ -20,7 +20,18 @@
     height: 100%;
     @include flexbox();
     @include flex-direction(column);
-    
+    div.back{
+        position: absolute;
+        width:.3rem;
+        height: .3rem;
+        font-size: .3rem;
+        z-index: 1000000;
+        top:.2rem;
+        left:.2rem;
+        a.font{
+            color:#212121;
+        }
+    }
     section{
         flex: 1;
         background: #eeeeee;

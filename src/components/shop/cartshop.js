@@ -28,6 +28,7 @@ class Cartshop extends React.Component{
 	render () {
 		return (
 			<div className="cartshop">
+				<div className="back yo-ico icon"><Link to="shop" className="font yo-ico icon">&#xe64e;</Link></div>
 				<section>
 					<Carousel className="swiper" autoplay={false}>
 					 	{this.state.bannerList}   
