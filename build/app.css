@@ -2165,6 +2165,7 @@ section {
   .shop_container #shop-top {
     height: .44rem; }
   .shop_container #shop-content {
+    touch-action: none;
     overflow-y: auto;
     -webkit-box-flex: 1;
     -webkit-flex: 1;
@@ -2261,7 +2262,8 @@ li {
         text-overflow: ellipsis;
         white-space: nowrap;
         overflow: hidden;
-        margin: .1rem 0; }
+        margin: .1rem 0;
+        color: #000; }
       .hot-sale .scroller .item .match_price {
         color: red;
         text-indent: 1em; }
@@ -2854,6 +2856,16 @@ li {
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
   flex-direction: column; }
+  .cartshop div.back {
+    position: absolute;
+    width: .3rem;
+    height: .3rem;
+    font-size: .3rem;
+    z-index: 1000000;
+    top: .2rem;
+    left: .2rem; }
+    .cartshop div.back a.font {
+      color: #212121; }
   .cartshop section {
     flex: 1;
     background: #eeeeee;

@@ -2,16 +2,14 @@ import React from 'react'
 
 import {render} from 'react-dom' 
 import {Link} from 'react-router'
-
+import Confirm from '../../component_dev/confirm/src/index.js';
 import Carousel from '../../component_dev/carousel/src/';
 import InputNumber from '../../component_dev/inputnumber/src/index.js';
-import Modal from '../../component_dev/modal/src/index.js';
-import Popup from '../../component_dev/popup/src/index.js';
 import fetchData from './fetch.js'
 class Cartshop extends React.Component{
 	constructor(props){
 		super(props)
-		this.Click=this.Click.bind(this)
+		
 		this.extend=this.extend.bind(this)
 		this.routeChange=this.routeChange.bind(this)
 		this.state = {
@@ -27,9 +25,49 @@ class Cartshop extends React.Component{
 	}
 	render () {
 		return (
+			
+			
 			<div className="cartshop">
+				
 				<div className="back yo-ico icon"><Link to="shop" className="font yo-ico icon">&#xe64e;</Link></div>
+				<div className="motai" onClick={this.none.bind(this)} ref="modal"></div>
+				<div className="btn" ref="btn">
+					<img src="" />
+					<div className="imgb">
+						<div className="dmsgn">琉璃杯</div>
+						<div className="dmsgp">$199</div>
+					</div>
+					<div className="v">
+						<span>
+							<p>数量</p>
+							<i><em>古洛克雕花</em></i>
+						</span>
+					</div>
+					<div className="color">
+						<span>
+							<p>数量</p>
+							<i><em></em></i>
+						</span>
+					</div>
+					<div className="num">
+						<span>
+							<p>数量</p>
+							<i>
+								<InputNumber
+								    value={this.state.value}
+								    min={0}
+								    onChange={value => this.setState({value})}
+								/>
+							</i>
+						</span>
+					</div>
+					<div className="foot" onClick={this.pushCart.bind(this)}>
+						购物车
+					</div>
+
+				</div>
 				<section>
+					
 					<Carousel className="swiper" autoplay={false}>
 					 	{this.state.bannerList}   
 					</Carousel>
@@ -84,73 +122,29 @@ class Cartshop extends React.Component{
 							 </div>
 						</div>
 					</div>
-					<div className="modal">
-						<div classname="box"></div>
-						<div className="msg">
-							
-						</div>
-					</div>
 				</section>
-				<div className="popup">
-				<Popup show={this.state.a}  direction="up"  style={{height:'auto'}}>
-					<img src="" />
-					<div className="imgb">
-						<div className="dmsgn">琉璃杯</div>
-						<div className="dmsgp">$199</div>
-					</div>
-					<div className="v">
-						<span>
-							<p>数量</p>
-							<i><em></em></i>
-						</span>
-					</div>
-					<div className="color">
-						<span>
-							<p>数量</p>
-							<i><em></em></i>
-						</span>
-					</div>
-					<div className="num">
-						<span>
-							<p>数量</p>
-							<i>
-								
-								<InputNumber
-								    value={this.state.value}
-								    onChange={value => this.setState({value})}
-								     min={0}
-								>
-								<input type="number" />
-								</InputNumber>
-								
-							</i>
-						</span>
-					</div>
-					<div className="foot">
-						购物车
-					</div>
-				</Popup>
-				</div>
 				<footer>
 					<ul>
 						<li><Link className="yo-ico icon">&#xe603;</Link></li>
 						<li><Link className="yo-ico icon">&#xe602;</Link></li>
-						<li onClick={this.Click}><Link>加入购物车</Link></li>
-						<li onClick={this.Click}><Link>立即购买</Link></li>
+						<li onClick={this.show.bind(this)}><Link>加入购物车</Link></li>
+						<li onClick={this.show.bind(this)}><Link>立即购买</Link></li>
 					</ul>
 				</footer>
 			</div>
+
 		)
 	}
 	
-	Click (){
-			console.log(this.state.a)
-			if(!this.state.a){
-				 this.setState({
-		          	a:!this.state.a
-				 })
-			}
-			
+	show(){
+		this.refs.modal.style.display="block";
+		this.refs.btn.style.display="block";
+		this.refs.btn.style.animate="ani,0.5s";
+	}
+	none(){
+		this.refs.modal.style.display="none";
+		this.refs.btn.style.display="none";
+
 	}
 	extend () {
 		if(this.state.i!==1&&this.state.i%2==0){
@@ -169,22 +163,21 @@ class Cartshop extends React.Component{
 				 })
 			}
 	}
+	pushCart(){
+		window.localStorage.setItem("username","hhhhh")
+		if(window.localStorage.getItem("username")){
+			return Confirm({
+			    
+			    title:'加入购物车成功',
+			    btnText:[<div>去结算</div>,<div>再逛逛</div>]
+			});
+		}else{
+			alert("empty")
+		}
+	}
 	 componentDidMount() {
-	 //	let url = 'http://localhost:3000/list.php?count=3'
-	 	var _url="/v2/h5/cart/goodsChangePrice"
-	 	fetch(_url,{}).then(res=>res.json())
-	 	.then(res=>{
-	 		console.log(res);
-	 	})
-	 /*	
-	 	fetchData(url,function(res){
-	 		let Lis=res.data.map(val=>{
-				return ( <li className="item"><img className="img" src={val.img}/></li>  )
-	 	})
-	 		this.setState({
-				bannerList:Lis
-			})
-	 	}.bind(this))	*/
+	 	
+	
 	 }
 }
 export default Cartshop
