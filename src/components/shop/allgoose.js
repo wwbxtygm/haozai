@@ -33,7 +33,7 @@ class Allgoose extends React.Component {
 		})
 	}
 	render(){
-		console.log(this.state.listitem);
+	
 		return (
 			<div className="allgoose">
 				<p>所有商品</p>
@@ -68,7 +68,7 @@ class Allgoose extends React.Component {
 		.then(function(res){
 			var _len=res.data.data.length;
 			var res=res.data.data;
-			console.log(res);
+			
 			for(var i=0;i<_len;i++){
 			_list.push({content:<li className="listitem">
 			<img src={res[i].goods_img}/>

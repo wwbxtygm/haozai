@@ -15,6 +15,7 @@ import Cartshop from './shop/cartshop'
 import Footer from './Footer.js';
 import Matter from './shop/Matter';
 import Standard from './shop/Standard';
+import Search from './shop/search'
 
 class App extends React.Component{
   render(){
@@ -51,6 +52,7 @@ ReactDOM.render((
       <Route path='matter' component={Matter}/>
       <Route path='standard' component={Standard}/>
     </Route>
+    <Route path='search' component={Search}/>
   </Router>), document.getElementById('root'));
 
 
