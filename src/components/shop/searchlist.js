@@ -42,24 +42,55 @@ const multiData = {
         name: '产品2',
         value: 2,
         subList: '家具布艺',
-         msg:[2]
+         msg:[{imgurl:"http://img4.haozaishop.cn/category/209.jpg?v=20160325",goodsname:"床品套件"},
+         	{imgurl:"http://img4.haozaishop.cn/category/188.jpg",goodsname:"靠垫/抱枕"},
+         	{imgurl:"http://img4.haozaishop.cn/category/207.jpg",goodsname:"被子/被芯"},
+         	{imgurl:"http://img4.haozaishop.cn/category/208.jpg?v=20160325",goodsname:"枕头/枕芯"},
+         	{imgurl:"http://img4.haozaishop.cn/category/190.jpg?v=2016122911",goodsname:"地毯/地垫"},
+         	{imgurl:"http://img4.haozaishop.cn/category/185.jpg?v=20160325",goodsname:"餐桌布艺"},
+         	{imgurl:"http://img4.haozaishop.cn/category/206.jpg?v=20160325",goodsname:"毛毯/披毯"},
+         	{imgurl:"http://img4.haozaishop.cn/category/all.png?v=2016050411",goodsname:"全部"}
+         ]
     },
     {
         name: '产品3',
         value: 3,
         subList: '配饰日用',
-        msg:[3],
+        msg:[{imgurl:"http://img4.haozaishop.cn/category/181-1.jpg",goodsname:"创意饰品"},
+         	{imgurl:"http://img4.haozaishop.cn/category/180.jpg?v=20160325",goodsname:"花瓶/花盆"},
+         	{imgurl:"http://img4.haozaishop.cn/category/175-1.jpg",goodsname:"装饰画/相框"},
+         	{imgurl:"http://img4.haozaishop.cn/category/177-1.jpg",goodsname:"蜡烛/香薰"},
+         	{imgurl:"http://img4.haozaishop.cn/category/176.jpg",goodsname:"装饰器皿"},
+         	{imgurl:"http://img4.haozaishop.cn/category/227-1.jpg",goodsname:"礼品鲜花"},
+         	{imgurl:"http://img4.haozaishop.cn/category/161.jpg",goodsname:"收纳用品"},
+         	{imgurl:"http://img4.haozaishop.cn/category/196.jpg",goodsname:"浴室用品"},
+         	{imgurl:"http://img4.haozaishop.cn/category/all.png?v=2016050411",goodsname:"全部"}
+         ]
 
     },{
         name: '产品4',
         value: 4,
         subList: '厨房餐饮',
-        msg:[4],
+        msg:[{imgurl:"http://img4.haozaishop.cn/category/116.jpg?v=2016122711",goodsname:"餐具"},
+         	{imgurl:"http://img4.haozaishop.cn/category/112.jpg",goodsname:"茶具"},
+         	{imgurl:"http://img4.haozaishop.cn/category/113.jpg",goodsname:"酒具"},
+         	{imgurl:"http://img4.haozaishop.cn/category/115-1.jpg",goodsname:"杯子"},
+         	{imgurl:"http://img4.haozaishop.cn/category/114.jpg?v=20161229411",goodsname:"咖啡具"},
+         	{imgurl:"http://img4.haozaishop.cn/category/117.jpg",goodsname:"烹饪工具"},
+         	{imgurl:"http://img4.haozaishop.cn/category/118.jpg",goodsname:"厨房收纳"},
+         	{imgurl:"http://img4.haozaishop.cn/category/all.png?v=2016050411",goodsname:"全部"}
+         ]
     },{
         name: '产品5',
         value: 5,
         subList: '灯饰照明',
-         msg:[5],
+         msg:[{imgurl:"http://img4.haozaishop.cn/category/170.jpg",goodsname:"吊灯"},
+         	{imgurl:"http://img4.haozaishop.cn/category/169.jpg",goodsname:"壁灯"},
+         	{imgurl:"http://img4.haozaishop.cn/category/168.jpg",goodsname:"装饰台灯"},
+         	{imgurl:"http://img4.haozaishop.cn/category/167.jpg",goodsname:"落地灯"},
+         	{imgurl:"http://img4.haozaishop.cn/category/166.jpg",goodsname:"其他灯"},
+         	{imgurl:"http://img4.haozaishop.cn/category/all.png?v=2016050411",goodsname:"全部"}
+         ]
     }]
 };
 
@@ -99,7 +130,7 @@ class Searchlist extends React.Component {
 
                    switch (itemType){
                        case 'ProductMenu':
-                           return <div className={index==this.state.value[0]?'active_list':''}>{data.subList}</div>
+                           return <div className={index==this.state.value[0]?'active_list leftmenu':'leftmenu'}>{data.subList}</div>
                    }
                }}
                renderContent={({type,data}) => {
@@ -109,7 +140,13 @@ class Searchlist extends React.Component {
                        return <Menu menu={data.msg}/>;
                        			
                        case '家具布艺':
-                           return <div>p2</div>;
+                           return <Menu menu={data.msg}/>;
+                       case '配饰日用':
+                           return <Menu menu={data.msg}/>;
+                        case '厨房餐饮':
+                           return <Menu menu={data.msg}/>;
+                        case '灯饰照明':
+                           return <Menu menu={data.msg}/>;
                    }
                }}
            />

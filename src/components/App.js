@@ -16,7 +16,7 @@ import Footer from './Footer.js';
 import Matter from './shop/Matter';
 import Standard from './shop/Standard';
 import Search from './shop/search'
-
+import Login from './shop/login'
 class App extends React.Component{
   render(){
     return(
@@ -53,6 +53,7 @@ ReactDOM.render((
       <Route path='standard' component={Standard}/>
     </Route>
     <Route path='search' component={Search}/>
+     <Route path='login' component={Login}/>
   </Router>), document.getElementById('root'));
 
 
