@@ -17,6 +17,7 @@ import Matter from './shop/Matter';
 import Standard from './shop/Standard';
 import Search from './shop/search'
 import Login from './shop/login'
+import Goodslists from './shop/goodslists'
 class App extends React.Component{
   render(){
     return(
@@ -54,6 +55,7 @@ ReactDOM.render((
     </Route>
     <Route path='search' component={Search}/>
      <Route path='login' component={Login}/>
+     <Route path='goodslist/:cid' component={Goodslists}/>
   </Router>), document.getElementById('root'));
 
 
