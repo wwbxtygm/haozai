@@ -10,10 +10,9 @@
  */
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import Touchable from '../../touchable/src';
 import Popup from '../../popup/src';
 import './style.scss';
-
+import Touchable from '../../touchable/src/index.js';
 let that = null;
 const container = document.createElement('div');
 
