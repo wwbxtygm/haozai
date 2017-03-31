@@ -1,9 +1,10 @@
-
+import {stateToProps,dispatchToProps} from "./reduxwwb"
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, hashHistory  } from 'react-router';
 import { Link } from 'react-router';
-class Login extends React.Component{
+import {connect} from "react-redux"
+class Logins extends React.Component{
 	constructor(props){
 		super(props)
 		this.state={
@@ -62,6 +63,7 @@ class Login extends React.Component{
 						
 						localStorage.setItem("userID",userID);
 						localStorage.setItem("isLogin",1);
+						that.props.changeLogin();
 						window.location.href="/#/user";
 					}
 				})
@@ -174,6 +176,6 @@ class Login extends React.Component{
   }
 }
 
-
+let Login =connect(stateToProps,dispatchToProps)(Logins);
 
 export default Login

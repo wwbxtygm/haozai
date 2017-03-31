@@ -1,9 +1,10 @@
 'use strict';
-
+import {stateToProps,dispatchToProps} from "./shop/reduxwwb";
 import React from 'react';
 import { render } from 'react-dom';
 import { Link } from 'react-router';
-class User_head extends React.Component{
+import {connect} from "react-redux"
+class User_heads extends React.Component{
 		constructor(props){
 		super(props);
 		this.state={
@@ -25,6 +26,7 @@ class User_head extends React.Component{
 	}
   render(){
   	console.log(this.state.userID);
+  	console.log("value",this.props.value);
     return(
       <div className="user-head">
 	      <div className="user-header">
@@ -61,4 +63,5 @@ class User_head extends React.Component{
 
   }
 }
+let User_head =connect(stateToProps,dispatchToProps)(User_heads);
 export default User_head

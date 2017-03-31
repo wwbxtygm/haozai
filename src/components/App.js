@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom';
 import { Router, Route, hashHistory ,IndexRoute, IndexRedirect, Redirect } from 'react-router'; //引入router
 
 //import Footer from './Footer.js';
-
+import { Provider } from 'react-redux'
+import {createStore} from "redux"
 import Home from './Home.js';
 import Room from './Room.js';
 import FullRoom from './FullRoom.js';
@@ -19,6 +20,10 @@ import Search from './shop/search'
 import Login from './shop/login'
 import Goodslists from './shop/goodslists'
 import Exchange from "./shop/exchange"
+
+
+import {reducer} from "./shop/reduxwwb"
+let store =createStore(reducer);
 class App extends React.Component{
   render(){
     return(
@@ -39,6 +44,7 @@ class App extends React.Component{
 }
 
 ReactDOM.render((
+<Provider store={store}>
   <Router history={hashHistory}>
     <Route path='/' component={App}>
       <IndexRedirect to="home/room" />
@@ -58,7 +64,8 @@ ReactDOM.render((
      <Route path='login' component={Login}/>
      <Route path='goodslist/:cid' component={Goodslists}/>
      <Route path="exchange" component={Exchange}/>
-  </Router>), document.getElementById('root'));
+  </Router>
+  </Provider>), document.getElementById('root'));
 
 
 
