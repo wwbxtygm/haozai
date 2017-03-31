@@ -3,17 +3,21 @@ import List from "../../component_dev/list/src/index"
 class Goodslists extends React.Component {
 	constructor(props){
 		super(props)
+		this.goBack=this.goBack.bind(this);
 		this.state={
-			listitem:[{}],
+			listitem:[{},{},{},{},{},{},{},{}],
 			playflag:false
 		}
+	}
+	goBack(){
+		history.go(-1);
 	}
 	render(){
 		return (
 				<div className="shop-goodslist">
 				<div className="yo-header yo-header-goodslist">
 					<p className="title">所有商品</p>
-					<span className="regret">返回</span>
+					<span className="regret" onClick={this.goBack}>返回</span>
 				</div>
 				
 				<List
