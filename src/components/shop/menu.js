@@ -24,7 +24,7 @@ class Menu extends React.Component {
 		var _len=this.props.menu.length;
 		var _arr=[];
 		for(var i=0;i<_len;i++){
-			_arr.push(<div className="goods"><Link to={{pathname:"goodslist/"+this.props.menu[i].cid}} ><img src={this.props.menu[i].imgurl} className="lazy"/>	<div>{this.props.menu[i].goodsname}</div></Link></div>)
+			_arr.push(<div className="goods"><Link to={{pathname:"goodslist/"+this.props.menu[i].cid}} ><img src={this.props.menu[i].imgurl} className="lazy"/>	<div className="goodsname">{this.props.menu[i].goodsname}</div></Link></div>)
 		}
 		this.setState({
 			data:_arr

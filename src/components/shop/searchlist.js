@@ -14,19 +14,19 @@ const multiData = {
          	cid:22
          },{
          	imgurl:"http://img4.haozaishop.cn/category/shafa.jpg",
-         	goodsname:"床垫",
+         	goodsname:"沙发",
          	cid:23
          },{
          	imgurl:"http://img4.haozaishop.cn/category/guizi.jpg",
-         	goodsname:"床垫",
+         	goodsname:"柜子",
          	cid:24
          },{
          	imgurl:"http://img4.haozaishop.cn/category/chaji.jpg",
-         	goodsname:"床垫",
+         	goodsname:"茶几",
          	cid:25
          },{
          	imgurl:"http://img4.haozaishop.cn/category/zhuozi.jpg",
-         	goodsname:"床垫",
+         	goodsname:"桌子",
          	cid:26
          },{
          	imgurl:"http://img4.haozaishop.cn/category/yizi.jpg",
@@ -34,15 +34,15 @@ const multiData = {
          	cid:27
          },{
          	imgurl:"http://img4.haozaishop.cn/category/jiazi.jpg",
-         	goodsname:"床垫",
+         	goodsname:"架子",
          	cid:28
          },{
          	imgurl:"http://img4.haozaishop.cn/category/pingjing.jpg",
-         	goodsname:"床垫",
+         	goodsname:"镜子",
          	cid:29
          },{
          	imgurl:"http://img4.haozaishop.cn/category/pingfeng.jpg",
-         	goodsname:"床垫",
+         	goodsname:"屏风",
          	cid:224
          },{
          	imgurl:"http://img4.haozaishop.cn/category/all.png?v=2016050411",

@@ -1,6 +1,7 @@
 import List from "../../component_dev/list/src/index"
 import Story from './story'
 let guid = -1;
+import {Link } from "react-router"
 class Allgoose extends React.Component {
 	constructor(props){
 		super(props);
@@ -21,9 +22,11 @@ class Allgoose extends React.Component {
 			console.log(res);
 			for(var i=0;i<_len;i++){
 			_list.push({content:<li className="listitem">
+				<Link to={{pathname:"cartshop/"+res[i].goods_id}}>
 			<img src={res[i].goods_img}/>
 			<p className="goodsname">{res[i].goods_name}</p>
 			<p className="goodsprice">￥{res[i].shop_price}</p>
+			</Link>
 			</li>,key:++guid});
 			}
 			
@@ -71,9 +74,11 @@ class Allgoose extends React.Component {
 			
 			for(var i=0;i<_len;i++){
 			_list.push({content:<li className="listitem">
+			<Link to={{pathname:"cartshop/"+res[i].goods_id}}>
 			<img src={res[i].goods_img}/>
 			<p className="goodsname">{res[i].goods_name}</p>
 			<p className="goodsprice">￥{res[i].shop_price}</p>
+			</Link>
 			</li>,key:++guid});
 			}
 			
