@@ -11,7 +11,7 @@ import Hotsale from './shop/hot-sale'
 import Story from './shop/story'
 import Newproduct from './shop/newproduct'
 import Allgoose from './shop/allgoose'
-
+import { Link } from "react-router"
 class Shop extends React.Component{
 	constructor(props){
 		super(props)
@@ -27,7 +27,7 @@ class Shop extends React.Component{
         <div id="shop-top">
         	<div className="yo-header yo-header-top">
         	<h2 className="title"><img src="/shopimg/logo.png"/></h2>
-        	<span className="regret"><img src="/shopimg/search.png"/></span>
+        	<span className="regret"><Link to="search"><img src="/shopimg/search.png"/></Link></span>
         	<span className="affirm"><img src="/shopimg/cart.png"/></span>
         	</div>
         </div>

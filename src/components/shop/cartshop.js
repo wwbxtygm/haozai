@@ -6,6 +6,7 @@ import Confirm from '../../component_dev/confirm/src/index.js';
 import Carousel from '../../component_dev/carousel/src/';
 import InputNumber from '../../component_dev/inputnumber/src/index.js';
 import fetchData from './fetch.js'
+import aJax from './Ajax'
 class Cartshop extends React.Component{
 	constructor(props){
 		super(props)
@@ -125,7 +126,7 @@ class Cartshop extends React.Component{
 				</section>
 				<footer>
 					<ul>
-						<li><Link className="yo-ico icon">&#xe603;</Link></li>
+						<li><Link to="exchange" className="yo-ico icon">&#xe603;</Link></li>
 						<li><Link className="yo-ico icon">&#xe602;</Link></li>
 						<li onClick={this.show.bind(this)}><Link>加入购物车</Link></li>
 						<li onClick={this.show.bind(this)}><Link>立即购买</Link></li>
@@ -176,8 +177,11 @@ class Cartshop extends React.Component{
 		}
 	}
 	 componentDidMount() {
-	 	
-	
+
+	 	aJax("POST","http://wwbtygm.duapp.com/haozaicart",true,{goods_id:this.props.params.id},function(data){
+	 		console.log(JSON.parse(data));
+	 	})
+
 	 }
 }
 export default Cartshop
