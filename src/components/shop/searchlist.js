@@ -6,37 +6,48 @@ const multiData = {
         subList: '精品家居',
          msg:[{
          	imgurl:"http://img4.haozaishop.cn/category/chuang.jpg",
-         	goodsname:"床"
+         	goodsname:"床",
+         	cid:21
          },{
          	imgurl:"http://img4.haozaishop.cn/category/chuangdian.jpg",
-         	goodsname:"床垫"
+         	goodsname:"床垫",
+         	cid:22
          },{
          	imgurl:"http://img4.haozaishop.cn/category/shafa.jpg",
-         	goodsname:"床垫"
+         	goodsname:"床垫",
+         	cid:23
          },{
          	imgurl:"http://img4.haozaishop.cn/category/guizi.jpg",
-         	goodsname:"床垫"
+         	goodsname:"床垫",
+         	cid:24
          },{
          	imgurl:"http://img4.haozaishop.cn/category/chaji.jpg",
-         	goodsname:"床垫"
+         	goodsname:"床垫",
+         	cid:25
          },{
          	imgurl:"http://img4.haozaishop.cn/category/zhuozi.jpg",
-         	goodsname:"床垫"
+         	goodsname:"床垫",
+         	cid:26
          },{
          	imgurl:"http://img4.haozaishop.cn/category/yizi.jpg",
-         	goodsname:"床垫"
+         	goodsname:"床垫",
+         	cid:27
          },{
          	imgurl:"http://img4.haozaishop.cn/category/jiazi.jpg",
-         	goodsname:"床垫"
+         	goodsname:"床垫",
+         	cid:28
          },{
          	imgurl:"http://img4.haozaishop.cn/category/pingjing.jpg",
-         	goodsname:"床垫"
+         	goodsname:"床垫",
+         	cid:29
          },{
          	imgurl:"http://img4.haozaishop.cn/category/pingfeng.jpg",
-         	goodsname:"床垫"
+         	goodsname:"床垫",
+         	cid:224
          },{
          	imgurl:"http://img4.haozaishop.cn/category/all.png?v=2016050411",
-         	goodsname:"全部"
+         	goodsname:"全部",
+         	cid:16
          }],
     },{
         name: '产品2',

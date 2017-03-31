@@ -83,3 +83,8 @@
 		}
 	}
 }
+@include yo-header($name:goodslist,$color:#000,$bgcolor:#f7f7f7,$border-width: 0,$height:.7rem){
+	.regret{
+		color:#000;
+	}
+}
